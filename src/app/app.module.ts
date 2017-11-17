@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CompleteComponent } from './pages/complete/complete.component';
 import { AppRoutingModule } from './core/app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { petTagReducer } from './core/pet-tag.reducer';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { AppRoutingModule } from './core/app-routing.module';
   ],
   imports: [
     BrowserModule,
+    StoreModule.provideStore({petTag: petTagReducer}),
     AppRoutingModule
   ],
   providers: [],
